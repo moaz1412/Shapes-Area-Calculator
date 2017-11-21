@@ -1,0 +1,2 @@
+# Shapes-Area-Calculator
+Create a menu-driven program using a switch statement that will offer the user the following functionalities:  1. Calculate the Area of a Circle  2. Calculate the Area of a Rectangle  3. Calculate the Area of a Square  4. Save to file  5. Exit Program  each time the program calculates a shape area, it stores the shape details and the calculated area into an array/s in the memory. when the user selects option: 4. Save to file, all the data is written into a text file .  You must use functions, such as:  double calculateCircleArea();
