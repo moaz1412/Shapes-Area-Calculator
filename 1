@@ -1,0 +1,97 @@
+#include<iostream>
+#include<fstream>
+#include<string>
+
+using namespace std;
+
+
+double calculateCircleArea(double);
+double calculateSquareArea(double);
+double calculateRectangleArea(double,double);
+void menu_driven();
+
+int main(){
+	const int ARRAY_SIZE = 100;
+	ofstream myfile;
+	myfile.open ("results.txt");
+	double Arr_Circe[ARRAY_SIZE]={0};
+	double Arr_Square[ARRAY_SIZE]={0};
+	double Arr_Rectangle[ARRAY_SIZE]={0};
+	int h,C=0,S=0,R=0;
+	float x,y;
+	do{
+		menu_driven();
+		cin>>h;
+		switch (h){
+		case 1:
+			cout<<"Enter Radius\n";
+			cin>>x;
+			Arr_Circe[C]=calculateCircleArea(x);
+			cout<<"The Area of a Radius ="<<Arr_Circe[C++];
+			break;
+		case 2:
+			cout<<"Enter Length and Width \n";
+			cin>>x>>y;
+			Arr_Rectangle[R]=calculateRectangleArea(x,y);
+			cout<<"The Area of a Rectangle ="<<Arr_Rectangle[R++];
+			break;
+		 case 3:
+			cout<<"Enter Rib\n";
+			cin>>x;
+			Arr_Square[S]=calculateSquareArea(x);
+			cout<<"The Area of a Rib ="<<Arr_Square[S++];
+			break;
+		case 4:
+			myfile << "Circle\t";
+			for(int i=0;i<C;i++){
+				myfile<<"("<<Arr_Circe[i]<<").";
+			}
+
+			myfile << "\nRectangle\t";
+			for(int i=0;i<R;i++){
+			myfile<<"("<<Arr_Rectangle[i]<<").";
+			}
+
+			myfile << "\nSquare\t";
+			for(int i=0;i<S;i++){
+				myfile<<"("<<Arr_Square[i]<<").";
+			}
+            myfile<<endl;
+
+			break;
+		case 5:
+			break;
+		default:
+			cout<<"Wrong.Enter number from 1 to 5";
+			break;
+		}
+			}while(h!=5);
+
+	return 0;
+}
+
+double calculateCircleArea(double Radius){
+	return Radius*Radius*(22/7);
+}
+
+double calculateSquareArea(double Rib){
+	return Rib*Rib;
+}
+
+double calculateRectangleArea(double Length,double Width){
+	return Length*Width;
+}
+
+void menu_driven(){
+cout << "\nMENU" << endl;
+cout <<"1. Calculate the Area of a Circle" << endl;
+cout <<"2. Calculate the Area of a Rectangle" << endl;
+cout <<"3. Calculate the Area of a Square" << endl;
+cout <<"4. Save to file" << endl;
+cout <<"5. Exit Program" << endl;
+cout << "Enter your choice :" << endl;
+
+ }
+
+
+
